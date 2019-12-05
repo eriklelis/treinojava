@@ -56,7 +56,7 @@ public class Exercicios_Aula4 {
 			System.out.println(vetExResult[i]);
 		}
 		*/
-		
+		/*
 		//exerercicio 7
 		int[] vetEx7 = new int[10];
 		int[] vetAux = new int[10];
@@ -88,8 +88,38 @@ public class Exercicios_Aula4 {
 		for(int y = 0; y <= 9 ; y++) {
 			System.out.println(vetAux[y]);
 		}
+		*/
+		//EXERCICIO 16
+		int[] vetEx7 = new int[10];
+		int[] vetAux = new int[10];
+		
+		int ponteiro = 0, maior = -2147483648,indice = -1; ///inicializo as variaveis que vou precisar
 		
 		
+		for(int i = 0; i <=9; i++) { //preencho o vetor
+			System.out.println(i + ":     Informe um numero inteiro");
+			vetEx7[i] = s.nextInt(); 
+			
+		}
+		
+		for(;ponteiro<=9;ponteiro++) {
+			for(int x = 0; x <= 9; x++) {//descubro o maior e o indice do maior 
+				
+				if( vetEx7[x] > maior) {
+					maior = vetEx7[x];
+					indice = x;
+				}
+			}
+			
+			vetEx7[indice] = -2147483648;// defino a posicao que era maior para 0
+			vetAux[ponteiro] = maior;
+			maior = -2147483648;
+		}	
+		
+		System.out.println("DAQUI PRA BAIXO JÁ ESTA ORDENADO");
+		for(int y = 0; y <= 9 ; y++) {
+			System.out.println(vetAux[y]);
+		}
 	}
 
 }
